@@ -8,8 +8,12 @@ public class Image {
         this.filename = filename;
         this.path = path;
     }
-    public  void display() {
-        System.out.println(path);
-        System.out.println(filename);
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public String getPath() {
+        return path;
     }
 }
