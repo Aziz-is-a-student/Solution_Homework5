@@ -2,25 +2,28 @@ package proxy;
 
 public class Proxy {
     private String filename;
-    private String path;
+    private String lowResPath;
+    private String highResPath;
     private Image lowResImage;
-    private Image hightResImage;
+    private Image highResImage;
 
-    public Proxy(String filename, String path) {
+    public Proxy(String filename, String lowResPath, String highResPath) {
         this.filename = filename;
-        this.path = path;
-        this.lowResImage = new LowResImage(filename, path);
+        this.lowResPath = lowResPath;
+        this.highResPath = highResPath;
+        this.lowResImage = new LowResImage(filename, lowResPath);
+
     }
 
     public void displayLowResImage() {
-        lowResImage.d;
+        lowResImage.display();
     }
 
     public void displayHightResImage() {
-        if (hightResImage != null) {
-            this.hightResImage = hightResImage;
+        if (highResImage == null) {
+            this.highResImage = new HIghtResImage(filename, highResPath);
         }
-        hightResImage.display();
+        highResImage.display();
     }
 
 }

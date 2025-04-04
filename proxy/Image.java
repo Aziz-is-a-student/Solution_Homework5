@@ -1,6 +1,6 @@
 package proxy;
 
-public class Image {
+public abstract class Image implements Displayable {
     private String filename;
     private String path;
 
@@ -16,4 +16,6 @@ public class Image {
     public String getPath() {
         return path;
     }
+    @Override
+   public abstract void  display();
 }
